@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Siswa</title>
+    
+</head>
+<body>
+
+    <button type="button" id="myButton">clik</button>
+
+</body>
+<script>
+    document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+}); 
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <h1 class="text-3xl font-bold mb-6 text-center">Pendaftaran Siswa</h1>
+    <form id="formStudent" onsubmit="return false;" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+            <label for="namaSiswa" class="block text-sm font-medium text-gray-700">Nama Siswa:</label>
+            <input type="text" id="namaSiswa" required class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition duration-200">Daftar</button>
+    </form>
+
+    <h2 class="text-2xl font-bold my-6 text-center">Daftar Siswa Terdaftar:</h2>
+    <div class="max-w-3xl mx-auto overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+            <thead>
+                <tr>
+                    <th class="border-b-2 border-gray-300 px-4 py-2 text-left">Nama Siswa</th>
+                </tr>
+            </thead>
+            <tbody id="daftarSiswa" class="divide-y divide-gray-200"></tbody>
+        </table>
+    </div>
+<script>
+    document.getElementById("formStudent").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const namaSiswaInput = document.getElementById('namaSiswa');
+        const tablebody = document.getElementById('daftarSiswa');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${namaSiswaInput.value}</td>`;
+});
+</script>w
+
+</body>
+</html>
